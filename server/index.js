@@ -8,7 +8,16 @@ var multer = require("multer");
 var multerS3 = require("multer-s3");
 
 let app = express();
-app.use(cors());
+// app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain$
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST");
+  next();
+});
 
 //var
 var upload = multer({
@@ -16,6 +25,7 @@ var upload = multer({
     s3: s3,
     bucket: "frmnjn-filedrop",
     acl: "public-read",
+    contentDisposition: "attachment",
     contentType: multerS3.AUTO_CONTENT_TYPE,
     metadata: function(req, file, cb) {
       cb(null, { fieldName: file.fieldname });
