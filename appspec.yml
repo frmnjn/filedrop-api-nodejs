@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /server
-    destination: /var/www/
+    destination: /home/ubuntu/filedrop-api-nodejs
 hooks:
   AfterInstall:
     - location: scripts/npm_install.sh
