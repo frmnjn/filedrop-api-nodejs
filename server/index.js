@@ -4,6 +4,8 @@ const AWS = require("aws-sdk");
 var s3 = new AWS.S3();
 var S3Zipper = require("aws-s3-zipper");
 var zipper = new S3Zipper({ bucket: "frmnjn-filedrop" });
+var multer = require("multer");
+var multerS3 = require("multer-s3");
 
 let app = express();
 app.use(
