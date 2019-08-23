@@ -10,13 +10,13 @@ hooks:
       timeout: 60
   AfterInstall:
     - location: scripts/npm_install.sh
-      runas: ec2-user
+      runas: root
       timeout: 300
   ApplicationStart:
     - location: scripts/npm_start.sh
-      runas: ec2-user
+      runas: root
       timeout: 60
   ApplicationStop:
     - location: scripts/npm_stop.sh
-      runas: ec2-user
+      runas: root
       timeout: 300
