@@ -1,4 +1,4 @@
 #!/bin/bash
 cd /home/ubuntu/filedrop-api-nodejs
-npm stop
+killall node
 #pm2 kill
