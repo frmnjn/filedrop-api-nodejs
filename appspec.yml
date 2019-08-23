@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /server
-    destination: /home/ubuntu/filedrop-api-nodejs
+    destination: /home/ubuntu/api/filedrop-api-nodejs
 hooks:
   Beforeinstall:
     - location: scripts/delete_module.sh
