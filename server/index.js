@@ -83,5 +83,4 @@ app.post("/drop/:username/:dropLink", upload.array("file", 3), function(
 });
 
 const port = 3333;
-console.log("wkwkwkwk");
 app.listen(port, () => console.log(`Server is listening on port: ${port}`));
