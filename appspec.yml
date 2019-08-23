@@ -4,6 +4,10 @@ files:
   - source: /server
     destination: /home/ubuntu/filedrop-api-nodejs
 hooks:
+  Beforeinstall:
+    - location: scripts/delete_module.sh
+      runas: root
+      timeout: 60
   AfterInstall:
     - location: scripts/npm_install.sh
       runas: root
