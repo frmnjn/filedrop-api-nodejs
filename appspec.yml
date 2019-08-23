@@ -6,7 +6,7 @@ files:
 hooks:
   Beforeinstall:
     - location: scripts/delete_module.sh
-      runas: ec2-user
+      runas: root
       timeout: 60
   AfterInstall:
     - location: scripts/npm_install.sh
