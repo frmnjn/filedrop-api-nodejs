@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/ubuntu/api/
+cd /home/ec2-user/api/
 rm -rf *
