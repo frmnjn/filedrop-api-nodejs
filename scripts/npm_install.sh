@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /home/ubuntu/api/filedrop-api-nodejs
+cd /home/ec2-user
 npm install
 npm audit fix
 npm install -g pm2
