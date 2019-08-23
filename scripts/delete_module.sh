@@ -1,2 +1,3 @@
 #!/bin/bash
-rm -rf /home/ubuntu/api/*
+cd /home/ubuntu/api/
+rm -rf *
