@@ -48,7 +48,7 @@ var upload = multer({
 
 //routes
 app.get("/", function(req, res) {
-  res.json({ Message: "Hello World from filedrop api! ^,^" });
+  res.json({ Message: "Hello World from filedrop api !! ^,^ " });
 });
 
 app.get("/download/:username/:folder", function(req, res) {
