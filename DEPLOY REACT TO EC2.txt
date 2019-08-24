@@ -1,0 +1,50 @@
+------------AMAZON LINUX AMI 2 WORKING------------
+#!/bin/bash
+yum -y update
+yum -y install ruby
+yum -y install aws-cli
+yum install -y gcc gcc-c++ make git
+curl --silent --location https://rpm.nodesource.com/setup_10.x | sudo bash -
+yum install -y nodejs
+npm install pm2@latest -g
+aws s3 cp s3://aws-codedeploy-ap-southeast-1/latest/install . --region ap-southeast-1
+chmod +x ./install
+./install auto
+
+------------UBUNTU SERVER 18.04---------------- 
+#!/bin/bash
+apt-get update
+apt-get install -y ruby
+snap install aws-cli --classic
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+apt-get install -y nodejs git
+cd /home/ubuntu/
+aws s3 cp s3://aws-codedeploy-ap-southeast-1/latest/install . --region ap-southeast-1
+chmod +x ./install
+./install auto
+service codedeploy-agent start
+
+---------------------RAW DATA--------------------
+#!/bin/bash
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs git
+git clone https://github.com/frmnjn/filedrop-api-nodejs
+cd filedrop-api-nodejs
+npm install
+npm audit fix
+npm install -g pm2
+node index.js
+pm2 start index.js
+pm2 startup
+sudo apt-get install -y ruby
+cd /home/ubuntu/
+sudo snap install aws-cli --classic
+aws s3 cp s3://aws-codedeploy-ap-southeast-1/latest/install . --region ap-southeast-1
+chmod +x ./install
+./install auto
+sudo service codedeploy-agent start
+
+
+
+
+ 
