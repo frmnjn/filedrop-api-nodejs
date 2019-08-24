@@ -14,7 +14,7 @@ hooks:
       timeout: 300
   ApplicationStart:
     - location: scripts/npm_start.sh
-      runas: root
+      runas: ec2-user
       timeout: 60
   ApplicationStop:
     - location: scripts/npm_stop.sh
